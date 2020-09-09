@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --main-color :#403E42 ;
+    --text-color : #f4f4f4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    background-color: #2B292E;
+}
+
+
+/* For styling of Homework Todo and Notes headers */
+.title_todos {
+    margin-bottom: 20px;
+    padding:20px 0;
+    width:100%;
+    background-color: var(--main-color);
+    color:var(--text-color);
+    text-align: center;
+    border-radius:7px;
+    background: #39C9BB;
+}
+
+.title_notes {
+    padding:20px 0;
+    width:100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Search Bar */
+#search_todos {
+    height:35px;
+    width:100%;
+    display: block;
+    margin-bottom:15px;
+    padding:0 10px;
+    border-radius: 8px;
+    border:none;
+}
+
+/* Utility button class */
+.button {
+    display:block;
+    padding:5px 10px;
+    margin:15px 0;
+    border:none;
+    transition: background .3s ease;
+    cursor: pointer;
+    color:var(--text-color);
+    text-decoration: underline;
+}
+
+.editor_button {
+    border-radius: 4px;
+    color:#40E0D0;
+    background :#404040 ;
+    text-decoration:none;
+}
+
+.editor_button:hover {
+    background:#191919;
+}
+
+.closing {
+    display:none;
+    animation: animate2 0.5s forwards ease-in; 
+} 
+
+@keyframes animate2{
+    to {
+        transform:scale(0);
+        opacity: 0;
+    }
+}
+
+
+.submit {
+    /* display:flex; */
+    align-items: center;
+    justify-content: center;
+    border-radius:100%;
+    width:50px;
+    height:50px;
+    color:white;
+    background : #40E0D0
+}
+
+.submit:hover{
+    background:#26867C
+}
+
+.button_todo_item {
+    display:inline-block;
+    padding:5px 10px;
+    margin-left:8px;
+    border:none;
+    transition: background .3s ease;
+    border-radius:5px;
+    cursor: pointer;
+    color:var(--text-color);
+    text-decoration: underline;
+}
+
+.button_edit {
+    background : #40E0D0
+}
+
+.button_remove {
+    background: #353239;
+}
+
+.button_edit:hover{
+    background: #2C9C91
+}
+
+.button_remove:hover{
+    background: #191919
+}
+
+/* Input for entering new todo */
+.input {
+    height:35px;
+    width:100%;
+    display: block;
+    padding:0 10px;
+    margin-top:15px;
+    margin-bottom:6px;
+    border-radius: 8px;
+    border:none;
+}
+
+/* Hide completed checkbox */
+.checkbox {
+    margin-right:10px;
+    transform: scale(1.5);
+    margin-left:4px;
+}
+.checkbox:checked {
+    background-color:green;
+}
+
+.todo_summary {
+    margin-top:10px;
+    margin-bottom:10px
+}
+
+
+#main_container {
+    display:flex;
+}
+
+#notes_container {
+    flex:2;
+    margin:0 auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height:100vh
+}
+
+#notes_section {
+    width:70%;
+}
+
+
+#todo_container {
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height:100vh;
+    border-right: 1px solid #423e47;
+}
+
+#todo_section {
+    padding:0 15px;
+    width:100%;
+}
+
+/* Individual todo items */
+.todo_items {
+   display:flex;
+   justify-content: space-between;
+   padding:20px;
+   border:solid 1px #423e47;
+   margin-bottom:15px;
+   cursor: pointer;
+   width:100%;
+   background:#353239;
+   color:var(--text-color);
+}
+
+
+/* Search box for notes */
+#search_text {
+    margin-bottom:15px;
+    margin-right:8px;
+    height:30px;
+    padding:5px;
+}
+
+.dropdown {
+    height:30px;
+    padding:5px;
+}
+
+/* Create button */
+
+#create_note {
+    color:#E5E5E5;
+    background: #40E0D0;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+#create_note:hover {
+   background: #26867C;
+}
+
+/* Individual note items */
+.note_items {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:20px;
+    border:solid 1px #423e47;
+    margin-top:10px;
+    margin-bottom:15px;
+    cursor: pointer;
+    width:100%;
+    background:#5F5F5F;
+    color:var(--text-color);
+    font-family:'Roboto', sans-serif;
+    border-radius: 5px;
+}
+
+/* animation: animate1 1s forwards ease-in; */
+#editor_container {
+    display:none;
+}
+
+.editor_edit {
+    animation: animate1 0.5s forwards ease-in;
+}
+
+@keyframes animate1 {
+    from {
+        transform: scale(0);
+        opacity: 0.0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1.0;
+    }
+}
+
+/* Contains the todo text and the checkbox to mark the complete status */
+.todo_items_container {
+    display: flex;
+    font-size: 22px;
+    align-items: baseline;
+}
+
+.todo_items_container >:first-child {
+    margin-right: 10px;
+    transform: scale(1.5);
+}
+
+.todo_items:hover {
+    background: #3d3941;
+}
+
+/* Notes section Styling */
+#note_title {
+    display:block;
+    width:100%;
+    margin-bottom: 40px;
+    padding:15px 10px;
+    height:38px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px ;
+}
+
+#note_body {
+    width:100%;
+    min-height:200px;
+    padding:10px 10px;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+
+/* Note item text */
+.words >:first-child {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.words >:nth-child(2) {
+    font-style: italic ;
+    position:absolute;
+}
+
+.remove {
+    color:#f4f4f4;
+    background-color: #404040;
+    border-radius: 3px;
+    transition: background .3s ease;
+    text-decoration: none;
+}
+
+.remove:hover {
+    background:#191919;
+}
+
+

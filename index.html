@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework app</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+
+    <div id="main_container">
+        <div id="todo_container">
+            <div class="title_todos"><h1>Homework To-Do</h1></div>
+            <div id="todo_section">
+                <!-- Search bar and Hide completed checkbox -->
+                <input id="search_todos" type="text" placeholder="Search todos">
+                <label class>
+                    <input type="checkbox" class="checkbox" id="hide"> Hide Completed
+                </label>
+                <!-- Div where todo items will be rendered -->
+                <div id="todos"></div>
+                <!-- Creation of a new todo -->
+                <form id="todo_form" action="">
+                    <input type="text" class="input" placeholder="Enter new todo" name="newTodo">
+                    <button type="submit" class="button submit"><i class="fas fa-plus fa-2x"></i></button>
+                </form>
+            </div>
+        </div>
+      
+        <div id="notes_container">
+            <div class="title_notes"><h1>Homework Notes</h1></div>
+            <div id="notes_section">
+              <div id="editor_container">
+                <button class='button editor_button'>Close Editor</button>
+                <input type="text" id="note_title"  placeholder="Note title">
+                <textarea id="note_body"></textarea>
+              </div>
+                <input type="text" id="search_text" placeholder="Seach for note">
+                <select id="sort_by" class="dropdown">
+                    <option value="byEdited" selected="selected">Sort by last edited</option>
+                    <option value="byCreated">Sort by recently created</option>
+                    <option value="alphabetical">Sort alphabetically</option>
+                </select>
+                <div id="notes"></div>
+                <button id="create_note" class='button'>Create Note</button>
+            </div>
+        </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
+    <script src="https://kit.fontawesome.com/117337575b.js" crossorigin="anonymous"></script>
+    <script src="./scripts/uuidv4.js"></script>
+    <script src="./scripts/notes-functions.js"></script>
+    <script src="./scripts/notes-app.js"></script>
+    <script src="./scripts/todo-functions.js"></script>
+    <script src="./scripts/todo-app.js"></script>
+</body>
+</html>
